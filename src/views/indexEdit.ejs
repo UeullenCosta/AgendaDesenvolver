@@ -1,0 +1,54 @@
+<%- include('includes/head.ejs') %>
+
+<div class="container ">
+  <H1 class="mb-4 mt-3">Agenda Desenvolver</H1>
+  <%- include('includes/messages.ejs') %>
+
+    <form action="/agenda/edit/<%= agenamentoId.id %>" method="post" class="input-group mb-4">
+
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+      <input type="date" name="data" class="me-3 form-control" value="<%= agenamentoId.data %>" required>
+
+      <input type="text" name="nome"  class="me-3 form-control" placeholder="Nome do paciente" value="<%= agenamentoId.nome %>">
+
+      <select  name="terapeuta" required  class="me-3 form-control">
+        <option value="<%= agenamentoId.terapeuta %>"><%= agenamentoId.terapeuta %></option>
+        <option>Murilo</option>
+        <option>Suria</option>
+        <option>Paula</option>
+        <option>Nutrição</option>
+      </select>
+
+      <select name="horario"  class="me-3 form-control" required >
+        <option value="<%= agenamentoId.horario %>"><%= agenamentoId.horario %></option>
+        <option value="07:00">07:00:00</option>
+        <option value="07:45">07:45</option>
+        <option value="08:30">08:30</option>
+        <option value="09:15">09:15</option>
+        <option value="10:00">10:00</option>
+        <option value="10:45">10:45</option>
+        <option value="11:30">11:30</option>
+        <option value="13:00">13:00</option>
+        <option value="13:45">13:45</option>
+        <option value="14:30">14:30</option>
+        <option value="15:15">15:15</option>
+        <option value="16:00">16:00</option>
+        <option value="16:45">16:45</option>
+        <option value="17:30">17:30</option>
+      </select>
+
+      <select  name="convenio" required  class="me-3 form-control">
+        <option  value="<%= agenamentoId.convenio %>"><%= agenamentoId.convenio %></option>
+        <option>Unimed</option>
+        <option>Caesan</option>
+        <option>Ipasgo</option>
+        <option>Particular</option>
+      </select>
+
+      <button class="btn btn-outline-primary" type="submit" >Agendar</button>
+    </form>
+    
+ 
+
+<%- include('includes/footer.ejs') %>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <form class="container-fluid justify-content-end">
+      
+      <% if(!user) {%>
+        <a class="me-4 link-light link-underline-opacity-0 fs-5"  href="/">Login</a>
+        
+        <%}else{%>
+          <a class="me-4 link-underline-opacity-0 link-light fs-5 " href="/agenda" >Agenda</a>
+          <a class="me-4 link-light link-underline-opacity-0 fs-5"  href="/logout">Sair</a>
+   
+        <%}%>
+      
+      
+    </form>
+  </nav>
+  
