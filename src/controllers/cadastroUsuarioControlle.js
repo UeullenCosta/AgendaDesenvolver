@@ -1,4 +1,4 @@
-const UsersModel = require('../models/UsersModel');
+const {Users} = require('../models/UsersModel');
 //rota get
 exports.index = (req, res) => {
   res.render('cadastro')
@@ -10,7 +10,7 @@ exports.index = (req, res) => {
 exports.registerUser = async (req, res) => {
 
   try {
-    const userModel = new UsersModel(req.body); 
+    const userModel = new Users(req.body); 
     await userModel.register();
 
     if(userModel.errors.length > 0){
